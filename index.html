@@ -3,187 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master em Gestão & Franchising</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <title>Master em Gestão de Negócios & Franchising</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #ffffff;
-            --surface: #f8fafc;
-            --primary: #4f46e5;
-            --primary-dark: #3730a3;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --accent: #f59e0b;
-            --radius: 16px;
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            --primary: #0f172a;
+            --secondary: #2563eb;
+            --accent: #fbbf24;
+            --success: #10b981;
+            --gray-light: #f1f5f9;
+            --text-dark: #1e293b;
+            --white: #ffffff;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: #f8fafc;
         }
 
-        h1, h2, h3 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            letter-spacing: -0.02em;
-        }
-
-        /* Nav Glassmorphism */
+        /* Navegação */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.2rem 5%;
+            background: var(--white);
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); }
-        .menu a {
-            text-decoration: none;
-            color: var(--text-main);
-            margin-left: 2rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        .menu a:hover { color: var(--primary); }
+        nav .logo { font-weight: 700; color: var(--secondary); font-size: 1.2rem; }
+        nav a { text-decoration: none; color: var(--text-dark); margin-left: 20px; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: var(--secondary); }
 
-        /* Hero Modernizado */
+        /* Hero Section */
         header {
-            padding: 180px 5% 120px;
-            background: radial-gradient(circle at top right, #eef2ff, #ffffff);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(37, 99, 235, 0.8)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 20px;
             text-align: center;
         }
 
-        .hero-tag {
+        .hero-content h1 { font-size: 3rem; margin: 0; line-height: 1.2; }
+        .hero-content p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 20px auto; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Grid de Destaques */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: -80px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        .feature-card h3 { color: var(--secondary); margin-bottom: 10px; }
+        .feature-card p { font-size: 1.4rem; font-weight: 700; margin: 0; }
+        .feature-card span { font-size: 0.8rem; color: #64748b; }
+
+        /* Conteúdo Expandido */
+        section { margin-bottom: 60px; }
+        h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 30px; position: relative; }
+        h2::after { content: ''; display: block; width: 60px; height: 5px; background: var(--accent); margin-top: 10px; }
+
+        .content-flex { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+        .content-text { flex: 1; min-width: 300px; }
+        .content-image { flex: 1; min-width: 300px; }
+        .content-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        /* Tabela Profissional */
+        .table-container { overflow-x: auto; background: var(--white); padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th { background: var(--primary); color: var(--white); text-align: left; padding: 15px; }
+        td { padding: 15px; border-bottom: 1px solid #e2e8f0; }
+        tr:hover { background: #f8fafc; }
+
+        /* Tags de Habilidades */
+        .skill-tag {
+            display: inline-block;
             background: #e0e7ff;
-            color: var(--primary);
-            padding: 6px 16px;
-            border-radius: 100px;
+            color: #4338ca;
+            padding: 5px 15px;
+            border-radius: 50px;
             font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        header h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            max-width: 900px;
-            margin-inline: auto;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-        }
-
-        /* Botão Call to Action */
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s, background 0.2s;
-            display: inline-block;
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
+            margin: 5px;
         }
 
-        /* Grid de Estatísticas */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: -60px auto 80px;
-            padding: 0 20px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .stat-card:hover { transform: translateY(-5px); }
-        .stat-card h3 { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px; }
-        .stat-card p { font-size: 2rem; font-weight: 800; color: var(--primary); }
-
-        /* Seções Generosas */
-        section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.5rem; margin-bottom: 1rem; }
-        .section-desc { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3rem; max-width: 700px; }
-
-        .flex-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .img-container img {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.05);
-        }
-
-        /* Tabela Clean */
-        .table-box {
-            background: var(--surface);
-            padding: 20px;
-            border-radius: 24px;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th { text-align: left; padding: 20px; color: var(--text-muted); font-size: 0.85rem; }
-        td { padding: 20px; background: white; border-bottom: 2px solid var(--surface); }
-        tr td:first-child { border-radius: 12px 0 0 12px; font-weight: 700; }
-        tr td:last-child { border-radius: 0 12px 12px 0; }
-
-        /* Footer */
         footer {
-            background: #0f172a;
-            color: white;
-            padding: 80px 5%;
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 20px;
             text-align: center;
         }
 
         @media (max-width: 768px) {
-            .flex-container { grid-template-columns: 1fr; }
-            nav .menu { display: none; }
-            header { padding-top: 140px; }
+            .hero-content h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -199,83 +133,113 @@
 </nav>
 
 <header>
-    <span class="hero-tag">FORMAÇÃO EXECUTIVA 2026</span>
-    <h1>Lidere Operações de Alto Impacto & Franchising</h1>
-    <p>A ciência da gestão aplicada ao modelo de negócios que mais cresce no Brasil. Torne-se um tomador de decisão estratégico.</p>
-    <a href="#formacao" class="btn-primary">Explorar Trilha Acadêmica</a>
+    <div class="hero-content">
+        <h1>Gestão de Negócios & Franchising</h1>
+        <p>A trilha definitiva para quem deseja dominar o mercado corporativo, liderar operações de larga escala e empreender com segurança.</p>
+    </div>
 </header>
 
-<div class="stats-grid">
-    <div class="stat-card">
-        <h3>Lucratividade Média</h3>
-        <p>22%</p>
+<div class="container">
+    <div class="features">
+        <div class="feature-card">
+            <h3>Média de Lucro</h3>
+            <p>15% a 25%</p>
+            <span>Sobre o faturamento bruto</span>
+        </div>
+        <div class="feature-card">
+            <h3>Salário Gestor</h3>
+            <p>R$ 9.400,00</p>
+            <span>Média nacional para Gerentes</span>
+        </div>
+        <div class="feature-card">
+            <h3>Nota de Corte</h3>
+            <p>710 pontos</p>
+            <span>Média SiSU (Ampla Concorrência)</span>
+        </div>
     </div>
-    <div class="stat-card">
-        <h3>Remuneração Senior</h3>
-        <p>R$ 12.5k</p>
-    </div>
-    <div class="stat-card">
-        <h3>Crescimento Setor</h3>
-        <p>+15% aa.</p>
-    </div>
-</div>
 
-<section id="carreira">
-    <div class="flex-container">
-        <div class="text-content">
-            <h2 class="section-title">O Arquiteto de Negócios</h2>
-            <p class="section-desc">Mais do que administrar, o gestor moderno desenha processos escaláveis e mantém a cultura da marca viva em cada unidade franqueada.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <span style="background: #f1f5f9; padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 500;">BI & Data Analytics</span>
-                <span style="background: #f1f5f9; padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 500;">Lean Management</span>
-                <span style="background: #f1f5f9; padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 500;">Expansão de Redes</span>
+    <section id="carreira" style="margin-top: 80px;">
+        <div class="content-flex">
+            <div class="content-text">
+                <h2>O Papel do Especialista</h2>
+                <p>O gestor de negócios no franchising é o elo entre a estratégia da marca e a execução operacional. Ele não apenas "manda", ele analisa dados para prever crises e identificar oportunidades de crescimento.</p>
+                <p><strong>Responsabilidades Chave:</strong></p>
+                <div>
+                    <span class="skill-tag">Análise de DRE</span>
+                    <span class="skill-tag">Gestão de Estoque</span>
+                    <span class="skill-tag">Customer Experience</span>
+                    <span class="skill-tag">Treinamento de Liderança</span>
+                    <span class="skill-tag">Compliance de Marca</span>
+                </div>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Gestão em equipe">
             </div>
         </div>
-        <div class="img-container">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Workplace">
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="formacao" style="background: #fcfcfc;">
-    <h2 class="section-title">Trilha de Elite</h2>
-    <p class="section-desc">O caminho acadêmico para quem busca posições de C-Level ou empreendedorismo de alto nível.</p>
-    
-    <div class="table-box">
-        <table>
-            <thead>
-                <tr>
-                    <th>GRADUAÇÃO</th>
-                    <th>ESPECIALIZAÇÃO</th>
-                    <th>OBJETIVO</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Administração</td>
-                    <td>MBA em Franchising</td>
-                    <td>Visão Holística e Expansão</td>
-                </tr>
-                <tr>
-                    <td>Eng. de Produção</td>
-                    <td>Gestão de Operações</td>
-                    <td>Eficiência Logística</td>
-                </tr>
-                <tr>
-                    <td>Economia</td>
-                    <td>Finanças Corporativas</td>
-                    <td>M&A e Valuation</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+    <section id="formacao">
+        <h2>Trilha de Formação Acadêmica</h2>
+        <p>Para se tornar um gestor de elite, o mercado valoriza uma formação sólida combinada com especializações técnicas.</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nível</th>
+                        <th>Curso Recomendado</th>
+                        <th>Foco Estratégico</th>
+                        <th>Média de Corte ENEM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Graduação</strong></td>
+                        <td>Administração de Empresas</td>
+                        <td>Base teórica, contabilidade e economia.</td>
+                        <td>680 - 750</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tecnólogo</strong></td>
+                        <td>Processos Gerenciais</td>
+                        <td>Gestão operacional e rápida inserção no mercado.</td>
+                        <td>610 - 660</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pós-Graduação</strong></td>
+                        <td>MBA em Gestão de Franquias</td>
+                        <td>Expansão de redes e Direito Empresarial.</td>
+                        <td>N/A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="mercado">
+        <div class="content-flex" style="flex-direction: row-reverse;">
+            <div class="content-text">
+                <h2>O Mercado de Franchising</h2>
+                <p>O setor de franquias no Brasil fatura bilhões anualmente. Mesmo em tempos de crise, o modelo de gestão compartilhada oferece uma segurança que negócios independentes não possuem.</p>
+                <ul>
+                    <li><strong>Setor de Alimentação:</strong> Maior volume de transações.</li>
+                    <li><strong>Saúde e Bem-estar:</strong> Setor com maior crescimento em 2025.</li>
+                    <li><strong>Serviços Educacionais:</strong> Maior estabilidade a longo prazo.</li>
+                </ul>
+            </div>
+            <div class="content-image">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Gráficos de mercado">
+            </div>
+        </div>
+    </section>
+</div>
 
 <footer>
-    <h2 style="margin-bottom: 20px;">Transforme sua carreira hoje.</h2>
-    <p style="opacity: 0.7; margin-bottom: 40px;">Inscreva-se para receber nosso report mensal sobre o mercado de gestão.</p>
-    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; font-size: 0.8rem; opacity: 0.5;">
-        &copy; 2026 GESTAO.PRO - Excelência em Educação Corporativa.
+    <div class="container">
+        <h3>Pronto para liderar o mercado?</h3>
+        <p>A gestão de negócios é a arte de transformar recursos escassos em resultados extraordinários.</p>
+        <hr style="opacity: 0.1; margin: 30px 0;">
+        <p>&copy; 2026 Guia Profissional de Gestão. Todos os direitos reservados.</p>
     </div>
 </footer>
 
