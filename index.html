@@ -3,139 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empreendedor Franqueado | Carreira e Negócios</title>
+    <title>Gestão de Negócios | Foco em Franchising</title>
     <style>
         :root {
-            --primary: #1a3a5f;
-            --accent: #f39c12;
-            --light: #f4f7f6;
-            --dark: #2c3e50;
-            --success: #27ae60;
+            --primary: #003366;
+            --secondary: #00509d;
+            --accent: #ffcc00;
+            --text: #333;
+            --bg: #f0f2f5;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(rgba(26, 58, 95, 0.8), rgba(26, 58, 95, 0.8)), 
-                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
+            border-bottom: 5px solid var(--accent);
         }
 
         .container {
             max-width: 1100px;
-            margin: -30px auto 40px;
-            padding: 20px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
         }
 
-        .info-section {
+        .section-card {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
 
-        .stats-grid {
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; }
+
+        .grid-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin: 30px 0;
         }
 
-        .stat-card {
-            background: var(--primary);
-            color: white;
+        .info-item {
+            background: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
+            border: 1px solid #ddd;
         }
 
-        .stat-card h3 { margin: 0; font-size: 0.9rem; text-transform: uppercase; opacity: 0.8; }
-        .stat-card p { font-size: 1.5rem; font-weight: bold; margin: 10px 0 0; }
+        .info-item h3 { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
+        .info-item p { font-size: 1.4rem; font-weight: bold; color: var(--primary); margin: 0; }
 
-        .image-box {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
+        .img-container {
+            display: flex;
+            gap: 20px;
             margin: 20px 0;
+            flex-wrap: wrap;
         }
 
-        .tag {
-            display: inline-block;
+        .img-container img {
+            flex: 1;
+            min-width: 300px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .img-container img:hover { transform: scale(1.02); }
+
+        .badge {
             background: var(--accent);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
+            color: var(--primary);
+            padding: 5px 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 0.9rem;
         }
 
         footer {
-            background: var(--dark);
+            background: var(--primary);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>A Profissão: Empreendedor Franqueado</h1>
-    <p>O caminho entre a autonomia e o suporte de uma grande marca.</p>
+    <h1>Gestão de Negócios e Franchising</h1>
+    <p>A ciência por trás do sucesso empresarial e das redes de franquias.</p>
 </header>
 
 <div class="container">
-    
-    <section class="info-section">
-        <span class="tag">Mercado de Trabalho</span>
-        <h2>Expectativa Financeira e Retorno</h2>
-        <p>Diferente de um funcionário, o franqueado recebe através de <strong>lucros</strong> e <strong>pró-labore</strong>. O rendimento varia conforme o segmento (alimentação, educação, estética).</p>
+
+    <section class="section-card">
+        <h2>Indicadores da Profissão</h2>
+        <p>Para atuar na gestão de uma franquia, o profissional precisa dominar pilares de finanças, marketing e RH. Confira os dados médios do mercado brasileiro para gestores e donos de negócio:</p>
         
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>Média de Lucro Mensal</h3>
-                <p>R$ 5.000 a R$ 50.000+</p>
+        <div class="grid-info">
+            <div class="info-item">
+                <h3>Média Salarial (Gestor)</h3>
+                <p>R$ 8.500,00</p>
             </div>
-            <div class="stat-card">
-                <h3>Margem de Lucro Média</h3>
-                <p>10% a 20% do faturamento</p>
+            <div class="info-item">
+                <h3>Lucro Médio (Franqueado)</h3>
+                <p>R$ 15.000 - R$ 60.000</p>
             </div>
-            <div class="stat-card">
-                <h3>Nota de Corte (ENEM)</h3>
-                <p>N/A (Livre acesso)</p>
+            <div class="info-item">
+                <h3>Nota de Corte ENEM*</h3>
+                <p>620 - 780 pontos</p>
             </div>
         </div>
+        <p><small>*Baseado no curso de Administração/Gestão em universidades públicas via SiSU.</small></p>
         
-        <img src="https://images.unsplash.com/photo-1556740734-7f9582691ef6?auto=format&fit=crop&w=1000&q=80" alt="Atendimento em Franquia" class="image-box">
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Análise de Dados">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Reunião de Gestão">
+        </div>
     </section>
 
-    <section class="info-section">
-        <h2>Como ingressar?</h2>
-        <p>Embora não exista uma "nota de corte" oficial pois não é um curso universitário, as faculdades mais comuns escolhidas por quem quer ser um franqueado de sucesso são:</p>
+    <section class="section-card">
+        <h2>O Papel do Gestor de Franquias</h2>
+        <p>Diferente de um negócio isolado, a gestão de franquias exige a habilidade de **replicar um padrão** com excelência. O gestor é responsável por:</p>
         <ul>
-            <li><strong>Administração:</strong> Essencial para gestão de processos.</li>
-            <li><strong>Gestão Comercial:</strong> Foco em vendas e expansão.</li>
-            <li><strong>Economia/Contabilidade:</strong> Para controle rigoroso de caixa.</li>
+            <li><strong>Gestão Financeira:</strong> Controle de fluxo de caixa e pagamento de Royalties.</li>
+            <li><strong>Padronização:</strong> Garantir que o cliente tenha a mesma experiência em qualquer unidade.</li>
+            <li><strong>Liderança:</strong> Motivar equipes para atingir as metas de faturamento da rede.</li>
         </ul>
-        <p><em>Dica: Muitos franqueadores exigem apenas capital de investimento e o perfil comportamental aprovado em entrevista.</em></p>
         
-        <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e772?auto=format&fit=crop&w=1000&q=80" alt="Planejamento de Negócios" class="image-box">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=80" alt="Trabalho em Equipe" style="width:100%; height:350px; object-fit:cover; border-radius:10px;">
     </section>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 - Guia de Profissões e Franchising</p>
+    <p>&copy; 2026 Portal Gestão & Sucesso - O seu guia no mundo dos negócios.</p>
 </footer>
 
 </body>
